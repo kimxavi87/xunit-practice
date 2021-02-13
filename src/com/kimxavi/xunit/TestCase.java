@@ -15,14 +15,15 @@ public class TestCase implements Test {
     }
 
     @Override
-    public void run() {
+    public void run(TestResult testResult) {
+        testResult.testStarted();
         setUp();
 
         try {
             Method method = getClass().getMethod(name);
             method.invoke(this);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            testResult.testFailed();
         }
 
         tearDown();
