@@ -18,4 +18,8 @@ public class WasRun extends TestCase {
     public void testRunning() {
         log += " run";
     }
+
+    public void testBroken() {
+        throw new RuntimeException("Failed");
+    }
 }

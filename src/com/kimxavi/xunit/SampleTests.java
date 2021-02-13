@@ -11,6 +11,12 @@ public class SampleTests extends TestCase {
         Assert.assertEquals(wasRun.log, "setUp run tearDown");
     }
 
+    public void testBroken() {
+        WasRun wasRun = new WasRun("testBroken");
+        wasRun.run();
+        Assert.assertEquals(wasRun.log, "setUp run tearDown");
+    }
+
     public void testAssert() {
         Assert.assertEquals(0, 0);
     }
