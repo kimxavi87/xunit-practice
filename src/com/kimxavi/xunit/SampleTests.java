@@ -29,4 +29,9 @@ public class SampleTests extends TestCase {
         wasRun.run(testResult);
         Assert.assertEquals(testResult.getSummary(), "run : 1, failed : 1");
     }
+
+    public void testSuite() {
+        TestResult testResult = new TestResult();
+        TestSuite testSuite = new TestSuite();
+    }
 }

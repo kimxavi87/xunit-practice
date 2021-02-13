@@ -3,10 +3,12 @@ package com.kimxavi.xunit;
 public class Main {
     public static void main(String[] args) {
         TestResult testResult = new TestResult();
-        new SampleTests("testRunning").run(testResult);
-        new SampleTests("testAssert").run(testResult);
-        new SampleTests("testResult").run(testResult);
-        new SampleTests("testFailed").run(testResult);
+        TestSuite testSuite = new TestSuite();
+        testSuite.add(new SampleTests("testRunning"));
+        testSuite.add(new SampleTests("testAssert"));
+        testSuite.add(new SampleTests("testResult"));
+        testSuite.add(new SampleTests("testFailed"));
+        testSuite.run(testResult);
         System.out.println(testResult.getSummary());
     }
 }
