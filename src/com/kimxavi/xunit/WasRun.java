@@ -1,13 +1,21 @@
 package com.kimxavi.xunit;
 
-public class WasRun implements Test {
-    public boolean wasRun = false;
+public class WasRun extends TestCase {
+    public String log;
 
-    public void run() {
-        wasRun = true;
+    public WasRun(String name) {
+        super(name);
+    }
+
+    public void setUp() {
+        log = "setUp";
+    }
+
+    public void tearDown() {
+        log += " tearDown";
     }
 
     public void testRunning() {
-        run();
+        log += " run";
     }
 }

@@ -6,10 +6,9 @@ public class SampleTests extends TestCase {
     }
 
     public void testRunning() {
-        WasRun wasRun = new WasRun();
-        Assert.assertEquals(wasRun.wasRun, false);
+        WasRun wasRun = new WasRun("testRunning");
         wasRun.run();
-        Assert.assertEquals(wasRun.wasRun, true);
+        Assert.assertEquals(wasRun.log, "setUp run tearDown");
     }
 
     public void testAssert() {
