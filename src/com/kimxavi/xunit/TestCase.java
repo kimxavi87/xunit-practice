@@ -15,7 +15,7 @@ public class TestCase implements Test {
     }
 
     @Override
-    public void run(TestResult testResult) {
+    public final void run(TestResult testResult) {
         testResult.testStarted();
         setUp();
 

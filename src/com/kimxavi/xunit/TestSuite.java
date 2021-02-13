@@ -24,7 +24,7 @@ public class TestSuite implements Test {
     }
 
     @Override
-    public void run(TestResult testResult) {
+    public final void run(TestResult testResult) {
         for (Test test : tests) {
             test.run(testResult);
         }
