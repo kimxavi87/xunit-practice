@@ -5,6 +5,15 @@ public class SampleTests extends TestCase {
         super(name);
     }
 
+    public static TestSuite suite() {
+        TestSuite testSuite = new TestSuite();
+        testSuite.add(new SampleTests("testRunning"));
+        testSuite.add(new SampleTests("testAssert"));
+        testSuite.add(new SampleTests("testResult"));
+        testSuite.add(new SampleTests("testFailed"));
+        return testSuite;
+    }
+
     public void testRunning() {
         TestResult testResult = new TestResult();
         WasRun wasRun = new WasRun("testRunning");
